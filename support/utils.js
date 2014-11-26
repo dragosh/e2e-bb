@@ -35,21 +35,22 @@ var Browser = {
 var Support = {
     // #TODO(dragosh) refactor
     require: function(name, bundle, type) {
+        bundle = ( bundle || 'support') ;
         var arrName = name.split('.');
         var rawName = arrName[0];
         var fullPath;
         type = arrName[1];
         if(type === 'page') {
-            name = bundle + '/test/e2e/' + [rawName, type].join('.');
+            //name = bundle + [rawName, type].join('.');
         }else if(type ==='widget'){
-            name = bundle + '/widgets/'+rawName+'/test/e2e/'+ name;
+            name = bundle + '/widgets/'+rawName + '/' + name;
         } else if(type === 'container'){
-            fullPath = path.join(__dirname,
-                '/../../launchpad-webapps/portalserver/src/main/webapp/static/launchpad/containers/' +
-                rawName + '/test/e2e/' + name);
+            // fullPath = path.join(__dirname,
+            //     'support/containers/' +
+            //     rawName + '/test/e2e/' + name);
         }
-
-        fullPath =  fullPath || path.join(__dirname, '/../../launchpad-bundles/' + name); //back up to launchpad-bundles
+        console.log(name);
+        fullPath =  fullPath || path.join(__dirname,  name);
 
         return require(fullPath);
     },

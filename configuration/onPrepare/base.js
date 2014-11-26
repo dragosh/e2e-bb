@@ -11,15 +11,8 @@ global.utils = utils;
 
 global.login = function() {
 
-    var HomePage = utils.require('launchpad.page','launchpad');
-    var LoginWidget = utils.require('login.widget','launchpad/universal');
-    HomePage.visit();
-    browser.sleep(2000);
-    var loginWidget = new LoginWidget();
-    loginWidget.get().then(function(widget){
-        widget.login('lisa','password');
-        browser.sleep(2000);
-    });
+    // Impement Custom login
+
 };
 
 

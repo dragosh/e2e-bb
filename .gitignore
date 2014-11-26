@@ -1,4 +1,5 @@
 .dependency_hash
+target/
 #Node
 node/
 node_modules/

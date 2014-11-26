@@ -51,11 +51,11 @@ gulp.task('test', [], function() {
         if( obj.hasOwnProperty('include') ) {
             var suites = obj.include;
             if(suiteParam) {
-                testFiles.push('steps/' + appName + '/**/' + suiteParam + '/**/*.e2e.js');
+                testFiles.push('steps/' + appName + '/' + suiteParam + '/**/*.e2e.js');
                 pArgs.push('--suite', suiteParam);
             } else {
                 for( var suite in suites) {
-                    testFiles.push('steps/' + appName + '/**/' + suite + '/**/*.e2e.js');
+                    testFiles.push('steps/' + appName + '/' + suite + '/**/*.e2e.js');
                 }
             }
         }

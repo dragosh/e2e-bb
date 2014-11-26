@@ -10,7 +10,7 @@
 
 var utils = global.utils;
 
-var login = utils.require('login.widget' /* ,bundle name optional*/);
+var login = utils.require('login.widget');
 
 describe('Testing Homepage visibility', function() {
 

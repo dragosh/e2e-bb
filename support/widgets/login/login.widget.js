@@ -31,11 +31,12 @@ module.exports  = function(config) {
      */
     widget.get = function() {
         var d = utils.q.defer();
-        utils.getWidget(widget.title).then(function(res) {
+        var customSelector = element(by.css('.bd-login-container'));
+        utils.getWidget(customSelector).then(function(res) {
             widget.body = res.body;
             widget.username = widget.body.element(by.name('j_username'));
             widget.password = widget.body.element(by.name('j_password'));
-            widget.loginBtn = widget.body.element(by.css('.btn-sm'));
+            widget.loginBtn = widget.body.element(by.css('.bd-login-button'));
             d.resolve(widget);
         });
         return d.promise;

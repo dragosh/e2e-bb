@@ -21,32 +21,32 @@ exports.config = utils.extend(require('./base.conf.js').config, {
         defaultTimeoutInterval: 100000
     },
     multiCapabilities: [
+    // {
+    //     browserName: 'phantomjs',
+    //     version: '3',
+    //     platform: 'ANY',
+    // },
     {
-        browserName: 'phantomjs',
-        version: '2',
+        browserName: 'chrome',
+        version: '3',
         platform: 'ANY',
+        chromeOptions: {
+            args: ['show-fps-counter=true', '--test-type']
+        }
     },
     // {
-    //     browserName: 'chrome',
-    //     version: '2',
-    //     platform: 'ANY',
-    //     chromeOptions: {
-    //         args: ['show-fps-counter=true', '--test-type']
-    //     }
-    // },
-    // {
     //     browserName: 'firefox',
-    //     version: '2',
+    //     version: '3',
     //     platform: 'ANY'
     // },
     // {
     //     browserName: 'internet explorer',
-    //     version: '2',
+    //     version: '3',
     //     platform: 'ANY'
     // },
     // {
     //     browserName: 'safari',
-    //     version: '2',
+    //     version: '3',
     //     platform: 'ANY'
     // }
     ]

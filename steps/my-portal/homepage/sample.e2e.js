@@ -10,27 +10,19 @@
 
 var utils = global.utils;
 
-var login = utils.require('login.widget');
+describe('Testing my number', function() {
 
-describe('Testing Homepage visibility', function() {
-
-    Given('I am on the profile-summary page ', function(done) {
-        browser.get(utils.baseUrl('/'));
+    Given('I have a number ', function(done) {
+        this.num = 0;
         done();
     });
 
-    And('I have access to the widget element',function() {
-        new ProfileSummary({title: 'Profile - Summary with profile url'}).get().then(function(widget) {
-            this.widget = widget;
-        }.bind(this));
+    And('I add one',function() {
+        this.num++;
     });
 
-    Then('I should see a the Widget', function() {
-        expect(this.widget.isVisible()).toBeTruthy();
-    });
-
-    Then('I should see Lisa Nijenhuis name', function() {
-        expect(this.widget.profileName()).toBe('Lisa Nijenhuis');
+    Then('I should have 3', function() {
+        expect(this.num).toBe(1);
     });
 
 });

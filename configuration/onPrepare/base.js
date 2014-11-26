@@ -9,12 +9,23 @@ var locators = require('../../support/locators');
 global.dv = browser.driver;
 global.utils = utils;
 
+/**
+ * Auto login
+ * @return {[type]} [description]
+ */
 global.login = function() {
+    browser.sleep(2000);
+    var LoginPage = utils.require('login.page');
+    var LoginWidget = utils.require('login.widget');
+    var loginWidget = new LoginWidget();
+    var loginPage = new  LoginPage();
 
-    // Impement Custom login
-
+    loginPage.visit();
+    loginWidget.get().then(function(widget){
+        widget.login('admin','admin');
+        browser.sleep(2000);
+    });
 };
-
 
 global.takeScreenshot = function(filename, path) {
     browser.takeScreenshot().then(function(png) {

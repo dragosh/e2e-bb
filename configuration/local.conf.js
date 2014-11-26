@@ -21,8 +21,9 @@ exports.config = utils.extend(require('./base.conf.js').config , {
 
     capabilities:
     {
-        browserName: 'phantomjs',
-        'phantomjs.binary.path': require('phantomjs').path,
-        'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
+        browserName: 'chrome',
+        chromeOptions: {
+            args: ['show-fps-counter=true', '--test-type']
+        }
     }
 });
